@@ -21,6 +21,8 @@
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+    }
+    connectedCallback() {
       const id = this.getAttribute("data-id");
       this.shadowRoot.innerHTML = `
                 <iframe
