@@ -5,19 +5,49 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
     <script src="components.js"></script>
+    <style>
+      #dropdown-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      #instance-name {
+        width: 500px;
+        height: 50px;
+        box-sizing: border-box;
+      }
+
+      #results {
+        position: absolute;
+        top: 50px;
+        width: 500px;
+        overflow-y: scroll;
+        border: 2px solid #d2eff8;
+      }
+
+      .result a {
+        padding: 10px;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+      }
+      .result a:hover {
+        background-color: #f0f0fc;
+      }
+    </style>
   </head>
   <body>
-    <centered-text>
-      <h1>tl;dr boss</h1>
-      <p>look up by instance name:</p>
-      <input
-        type="text"
-        id="instance-name"
-        style="width: 500px; height: 50px"
-        autocomplete="off"
-      />
-      <div id="results"></div>
-    </centered-text>
+    <page-container>
+      <div style="text-align: center">
+        <h1>tl;dr boss</h1>
+        <p>look up by instance name:</p>
+        <div id="dropdown-container">
+          <input type="text" id="instance-name" autocomplete="off" />
+          <div id="results"></div>
+        </div>
+      </div>
+    </page-container>
   </body>
   <script lang="javascript">
     const data = [
@@ -59,7 +89,7 @@
             const instance = result.item;
             const instanceDiv = document.createElement("div");
             instanceDiv.className = "result";
-            instanceDiv.innerHTML = `<a href="${instance.path}"">${instance.name} (${instance.exp})</a>`;
+            instanceDiv.innerHTML = `<a href="${instance.path}">${instance.name} (${instance.exp})</a>`;
             resultsDiv.appendChild(instanceDiv);
         });
     });
