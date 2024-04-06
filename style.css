@@ -17,3 +17,9 @@ em {
     font-style: normal;
     font-weight: bold;
 }
+
+dfn {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
