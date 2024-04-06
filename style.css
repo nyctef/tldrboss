@@ -5,3 +5,15 @@ body {
         Arial,
         sans-serif;
 }
+
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-bottom: 0.5em;
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}
