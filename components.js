@@ -38,10 +38,10 @@
   window.customElements.define("youtube-video", YoutubeVideo);
 
   class PageBlock extends HTMLElement {
-      constructor() {
+    constructor() {
       super();
       this.attachShadow({ mode: "open" });
-        this.shadowRoot.innerHTML = `
+      this.shadowRoot.innerHTML = `
                 <style>
                   div {
                     padding: 1rem;
@@ -57,4 +57,24 @@
     }
   }
   window.customElements.define("page-block", PageBlock);
+
+  class Warning extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: "open" });
+      this.shadowRoot.innerHTML = `
+                <style>
+                    div {
+                        display: inline-block;
+                        background-color: #ffdf61;
+                        padding: 0 0.5em;
+                    }
+                </style>
+                <div>
+                    ⚠ Warning: <slot></slot>
+                </div>
+            `;
+    }
+  }
+  window.customElements.define("warning-block", Warning);
 })();
