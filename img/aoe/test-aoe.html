@@ -4,38 +4,49 @@
   <body>
     <svg width="200" height="200">
       <circle
+        id="aoe"
         cx="50"
         cy="50"
         r="40"
         stroke="#FFB60E"
         stroke-width="3"
         fill="#FFDD93"
-      />
+      ></circle>
       <image
+        id="blm"
         width="16"
         height="24"
         image-rendering="pixelated"
         x="42"
         y="38"
         xlink:href="blm-1.png"
-      >
-        <animate
-          attributename="x"
-          ,
-          from="42"
-          to="75"
-          dur="0.6s"
-          fill="freeze"
-        ></animate>
-        <animate
-          attributename="y"
-          ,
-          from="38"
-          to="75"
-          dur="0.6s"
-          fill="freeze"
-        ></animate>
-      </image>
+      ></image>
+      <animate
+        xlink:href="#blm"
+        id="blmmove"
+        attributename="x"
+        from="42"
+        to="75"
+        dur="0.4s"
+        fill="freeze"
+      ></animate>
+      <animate
+        xlink:href="#blm"
+        attributename="y"
+        from="38"
+        to="75"
+        dur="0.4s"
+        fill="freeze"
+      ></animate>
+      <animate
+        xlink:href="#aoe"
+        attributename="opacity"
+        from="1"
+        to="0"
+        dur="0.05s"
+        fill="freeze"
+        begin="blmmove.end + 0.1s"
+      ></animate>
     </svg>
   </body>
 </html>
