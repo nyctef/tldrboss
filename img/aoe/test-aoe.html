@@ -17,27 +17,20 @@
         width="16"
         height="24"
         image-rendering="pixelated"
-        x="42"
-        y="38"
+        transform="translate(42 38)"
         xlink:href="blm-1.png"
       ></image>
-      <animate
+      <animateTransform
         xlink:href="#blm"
         id="blmmove"
-        attributename="x"
-        from="42"
-        to="75"
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        from="42 38"
+        to="75 75"
         dur="0.4s"
         fill="freeze"
-      ></animate>
-      <animate
-        xlink:href="#blm"
-        attributename="y"
-        from="38"
-        to="75"
-        dur="0.4s"
-        fill="freeze"
-      ></animate>
+      />
       <animate
         xlink:href="#aoe"
         attributename="opacity"
