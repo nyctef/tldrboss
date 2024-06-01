@@ -4,9 +4,24 @@
       super();
       this.attachShadow({ mode: "open" });
       this.shadowRoot.innerHTML = `
-                <div style="display: flex; justify-content: center">
-                  <div style="width: 80%; max-width: 800px">
+                <div style="display: flex; flex-direction: column; align-items: center; height: 100%">
+                  <div style="width: 80%; max-width: 800px; flex-grow: 1">
                     <slot></slot>
+                  </div>
+                  <div style="width: 80%; max-width: 800px; flex-grow: 0; flex-shrink: 0">
+                    <div style="text-align: center">
+                      <p style="color: darkgrey">
+                        <small>FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd. FF14 copyrighted materials © SQUARE ENIX.</small>
+                      </p>
+                      <p>
+                        <small>
+                          Found a missing guide or incorrect information?
+                          <a href="https://github.com/nyctef/tldrboss">
+                            Contribute on github! <img src="/img/github-mark.svg" width="15" style="vertical-align:middle" />
+                          </a>
+                        </small>
+                      </p>
+                    </div>
                   </div>
                 </div>
             `;
